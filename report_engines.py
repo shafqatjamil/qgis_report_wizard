@@ -43,7 +43,9 @@ import os
 from zipfile import ZipFile,ZIP_DEFLATED
 
 from jinja2 import Environment, PackageLoader, select_autoescape, FileSystemLoader
-from jinja2 import evalcontextfilter, Markup, escape, meta
+from jinja2 import pass_eval_context, meta
+from markupsafe import escape
+from markupsafe import Markup
 
 from .ext_libs.secretary import Renderer    
 from .report_renderer import abstact_report_engine   
