@@ -38,6 +38,7 @@ from xml.parsers.expat import ExpatError, ErrorString
 from jinja2 import Environment, Undefined
 from markupsafe import Markup
 
+
 PY2 = sys.version_info < (3, 0)
 
 if PY2:
@@ -142,7 +143,7 @@ class Renderer(object):
             self.environment.filters['pad'] = pad_string
             self.environment.filters['markdown'] = self.markdown_filter
             self.environment.filters['image'] = self.image_filter
-            self.environment.globals['SafeValue'] = markupsafe.Markup
+            self.environment.globals['SafeValue'] = Markup
 
 
         self.media_path = kwargs.pop('media_path', '')
